@@ -1,0 +1,161 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Quartus/Lab/Lab4/adder/simulation/modelsim
+vfour_bit_ra
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1581619384
+!i10b 1
+!s100 P7>nAgBiDGV[U=bEQfRI<1
+I>I0j`XgZeAC@VDWg^h5[Z3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 ripple_adder_sv_unit
+S1
+R0
+Z5 w1581551737
+Z6 8D:/Quartus/Lab/Lab4/adders/ripple_adder.sv
+Z7 FD:/Quartus/Lab/Lab4/adders/ripple_adder.sv
+L0 23
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1581619384.000000
+Z10 !s107 D:/Quartus/Lab/Lab4/adders/ripple_adder.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Quartus/Lab/Lab4/adders|D:/Quartus/Lab/Lab4/adders/ripple_adder.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+D:/Quartus/Lab/Lab4/adders
+Z14 tCvgOpt 0
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 TI[QKG1=JgWzT5oiWhF0:3
+IFzO_f:O2fb1_kmlQ7D3_L1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 33
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 =R2i165HPJgkY;aA[TRmG3
+I3`X`:kYN<37cM]LAbC9:81
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1581362853
+8D:/Quartus/Lab/Lab4/adders/HexDriver.sv
+FD:/Quartus/Lab/Lab4/adders/HexDriver.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 D:/Quartus/Lab/Lab4/adders/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Quartus/Lab/Lab4/adders|D:/Quartus/Lab/Lab4/adders/HexDriver.sv|
+!i113 1
+R12
+R13
+R14
+n@hex@driver
+vlab4_adders_toplevel
+R1
+R2
+!i10b 1
+!s100 [l@P<8ol1QERCIg9KkP[E2
+I]1SUCcfoRDLF0_nn[e8IZ2
+R3
+!s105 lab4_adders_toplevel_sv_unit
+S1
+R0
+w1581551984
+8D:/Quartus/Lab/Lab4/adders/lab4_adders_toplevel.sv
+FD:/Quartus/Lab/Lab4/adders/lab4_adders_toplevel.sv
+L0 17
+R8
+r1
+!s85 0
+31
+R9
+!s107 D:/Quartus/Lab/Lab4/adders/lab4_adders_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Quartus/Lab/Lab4/adders|D:/Quartus/Lab/Lab4/adders/lab4_adders_toplevel.sv|
+!i113 1
+R12
+R13
+R14
+vripple_adder
+R1
+R2
+!i10b 1
+!s100 ao]7eGa4Y=`Zo7Q_:GCVe3
+IYYZN9M=58aB_F>k<[6n=<3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vtestbench
+R1
+R2
+!i10b 1
+!s100 mOINCaJHNdod62K6_GRlh3
+Ii=NgSE9ejUaC`:m_`N<ab3
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1581365049
+8D:/Quartus/Lab/Lab4/adder/../adders/testbench.sv
+FD:/Quartus/Lab/Lab4/adder/../adders/testbench.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 D:/Quartus/Lab/Lab4/adder/../adders/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Quartus/Lab/Lab4/adder/../adders|D:/Quartus/Lab/Lab4/adder/../adders/testbench.sv|
+!i113 1
+R12
+!s92 -sv -work work +incdir+D:/Quartus/Lab/Lab4/adder/../adders
+R14
