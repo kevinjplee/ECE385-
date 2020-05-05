@@ -1,0 +1,5 @@
+module move(.piece_x,
+				.select ,
+				.out_x
+)
+endmodule

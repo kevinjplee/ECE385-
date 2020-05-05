@@ -1,0 +1,27 @@
+module Clear (
+    input logic[2:0] gameboard[219:0],
+    output logic[2:0] out[219:0]
+);
+    logic line_full;
+    always_comb begin
+        for(int y=21;y>1;y--)   begin
+            line_full = 1'b1;
+            for(int x=0;x<10;x++)   begin
+                if(gameboard[y*10+x] == 3'b000)  begin
+                    line_full = 1'b0;
+                end
+            end
+            if(line_full)   begin
+                for(int i=y;i>2;i--)    begin
+                    for(int j=0;j<10;j++)   begin
+                        out[i*10+j] = gameboard[(i-1)*10+j];
+                    end
+                end
+                for(int j=0;j<10;j++)   begin
+                    out[2*10+j] = 3'b000;
+                end
+                y = y + 1;
+            end
+        end
+    end
+endmodule

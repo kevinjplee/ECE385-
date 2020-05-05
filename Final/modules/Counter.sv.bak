@@ -1,0 +1,10 @@
+module Counter( input logic Clk, Reset, countup, output logic[31:0] count);
+
+    always_ff @(posedge Clk) begin
+        if(countup)
+            count <= count + 1;
+    end
+    always_ff @(posedge Reset) begin
+        count <= 32'h0;
+    end
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon May 04 17:43:33 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Final
+Top-level Entity Name : Land
+Family : Cyclone IV E
+Total logic elements : 19,039
+    Total combinational functions : 19,039
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 1,381
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

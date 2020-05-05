@@ -1,0 +1,32 @@
+module PieceController(
+    input logic clk,load,gamestart,
+    input logic [2:0] Din[15:0],
+    input logic [5:0] Din_x,Din_y,
+    input logic [2:0] Din_type,
+    input logic [3:0] Din_r,
+    output logic [2:0] pieceout[15:0],
+    output logic [5:0] piece_x,piece_y,
+    output logic [2:0] piece_type,
+    output logic [3:0] piece_r
+);
+    always_ff @(posedge clk) begin
+        /*if (gamestart) begin
+            for(int i=0;i<16;i++) begin
+                pieceout[i] <= 3'b0;
+            end
+            piece_x <= 5'b00001;
+            piece_y <= 5'b00001;
+            piece_type <= 3'b0;
+            piece_r <= 4'b0;
+        end*/
+        if(load)    begin
+            for(int i=0;i<16;i++) begin
+                pieceout[i] <= Din[i];
+            end
+            piece_x <= Din_x;
+            piece_y <= Din_y;
+            piece_type <= Din_type;
+            piece_r <= Din_r;
+        end
+    end
+endmodule

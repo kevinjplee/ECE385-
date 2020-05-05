@@ -1,0 +1,9 @@
+17:50:20 **** Incremental Build of configuration Nios II for project tetris ****
+make all 
+Info: Building ../tetris_bsp/
+D:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../tetris_bsp/
+[BSP build complete]
+[tetris build complete]
+
+17:50:21 Build Finished (took 961ms)
+

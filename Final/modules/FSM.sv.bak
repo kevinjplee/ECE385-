@@ -1,0 +1,212 @@
+module FSM(input logic CLK, RESET, AES_START, 
+				output logic[2:0] mixSelect,
+				output logic AES_DONE,
+			  output logic Load, 
+			  output logic [2:0] Select, 
+			  output logic [4:0] count,
+			  output logic clear
+			  );
+
+//A: Start
+//B: ShiftRows
+//C: SubBytes
+//D: MixColumns
+//E1~10: Keyexpansion
+//F: AddRoundkey
+//Y: Wait
+//Z: Done
+enum logic [4:0] {A, B,C1,C2, D1, D2, D3, D4, D5,
+E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, F, Y, Z} curr_state, next_state;
+
+logic countup;
+	Counter counter(.*, .Clk(CLK));
+	
+	always_ff @ (posedge CLK)
+	begin
+		if(RESET)	begin
+			curr_state <= A;
+			end
+			
+		else begin
+			curr_state <= next_state;
+			end
+		end
+		
+		always_comb
+			begin
+			
+			next_state = curr_state;
+			mixSelect = 3'b000;
+			AES_DONE = 1'b0;
+			clear = 1'b0;
+			countup = 1'b0;
+			Select = 3'b000;
+			Load = 1'b0;
+			unique case (curr_state)
+			
+				A: if(AES_START == 1'b1)
+						next_state = E1;
+					else
+						next_state = A;
+				B: next_state = C1;		//debug
+				C1: next_state = C2;		//debug
+				C2: next_state = F;		//debug
+				D1: next_state = D2;
+				D2: next_state = D3;
+				D3: next_state = D4;
+				D4: next_state = D5;
+				D5: next_state = B;
+				E1: next_state = E2;
+				E2: next_state = E3;
+				E3: next_state = E4;
+				E4: next_state = E5;
+				E5: next_state = E6;
+				E6: next_state = E7;
+				E7: next_state = E8;
+				E8: next_state = E9;
+				E9: next_state = E10;
+				E10: next_state = F;
+				F: if(count == 4'b0)
+						next_state = B;
+					 else if(count == 4'b1010)		//debug
+						next_state = Z;
+					 else
+						next_state = D1;
+				Y: if(AES_START == 1'b0)
+						next_state = A;
+					else
+						next_state = Y;
+				Z:	if(AES_START == 1'b1)
+						next_state = Z;
+					else
+						next_state = Y;
+				default:
+					next_state = A;
+			endcase
+			
+			case (curr_state)
+				A:
+				begin
+					Select = 3'b100;
+					Load = 1'b1;
+					countup = 1'b0;
+					clear = 1'b1;
+					mixSelect= 3'b100;
+				end
+				B:
+				begin
+					Select = 3'b000;
+					Load = 1'b1;
+					countup = 1'b0;
+				end
+				C1:
+				begin
+					Select = 3'b001;
+					Load = 1'b0;	//debug
+				end
+				C2:				//debug
+				begin
+					Select = 3'b001;
+					Load = 1'b1;
+				end
+				D1:
+				begin
+					mixSelect = 3'b000;
+					Load = 1'b0;
+				end
+				D2:
+				begin
+					mixSelect = 3'b001;
+					Load = 1'b0;
+				end
+				D3:
+				begin
+					mixSelect = 3'b010;
+					Load = 1'b0;
+				end
+				D4:
+				begin
+					mixSelect = 3'b011;
+					
+				end
+				D5:
+				begin
+				Select = 3'b011;
+					Load = 1'b1;
+					countup = 1'b1;
+				end
+				E1:
+				begin
+				Load = 1'b0;
+				clear = 1'b0;
+				end
+				E2:
+				begin
+				Load = 1'b0;
+				end
+				E3:
+				begin
+				Load = 1'b0;
+				end
+				E4:
+				begin
+				Load = 1'b0;
+				end
+				E5:
+				begin
+				Load = 1'b0;
+				end
+				E6:
+				begin
+				Load = 1'b0;
+				end
+				E7:
+				begin
+				Load = 1'b0;
+				end
+				E8:
+				begin
+				Load = 1'b0;
+				end
+				E9:
+				begin
+				Load = 1'b0;
+				end
+				E10:
+				begin
+				Load = 1'b0;
+				end
+				F:
+				begin
+				Select = 3'b010;
+				Load = 1'b1;
+				if(count == 4'b0)
+				begin
+					countup = 1'b1;
+				end
+				else
+				begin
+					countup = 1'b0;
+				end
+				end
+				Y:
+				begin
+				Load = 1'b0;
+				clear = 1'b1;
+				end
+				Z:
+				begin
+				Load = 1'b0;
+				AES_DONE = 1'b1;
+				end
+				
+			endcase
+		end
+
+endmodule
+				
+						
+						
+						
+						
+						
